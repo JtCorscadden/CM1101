@@ -1,3 +1,4 @@
+from items import *
 room_bedroom = {
     "name": "Bedroom",
 
@@ -30,6 +31,7 @@ room_kitchen = {
     "exits": {"east": "Hall"},
 
     "items": [item_example, item_example]
+}
 
 room_hall = {
     "name": "Hall",
@@ -76,6 +78,7 @@ room_exit = {
     "exits": {"north": "Hall", "east": "Outside"},
 
     "items": [item_example, item_example]
+}
 
 room_outside = {
     "name": "Outside",
@@ -91,6 +94,7 @@ room_outside = {
     "exits": {"west": "Exit", "east": "Shop", "south": "Alley"},
 
     "items": [item_example, item_example]
+}
 
 room_shop = {
     "name": "Shop",
@@ -105,6 +109,7 @@ room_shop = {
     "exits": {"west": "Outside"},
 
     "items": [item_example, item_example]
+}
 
 room_alley = {
     "name": "Alley",
@@ -119,6 +124,7 @@ room_alley = {
     "exits": {"north": "Outside", "south": "Bus Stop"},
 
     "items": [item_example, item_example]
+}
 
 room_bus = {
     "name": "Bus Stop",
@@ -133,13 +139,14 @@ room_bus = {
     "exits": {"north": "Alley"},
 
     "items": [item_example, item_example]
+}
 
 rooms = {
     "Bedroom": room_bedroom,
     "Kitchen": room_kitchen,
     "Hall": room_hall,
     "Bathroom": room_bathroom,
-    "Exit": room_exit
+    "Exit": room_exit,
     "Outside": room_outside,
     "Shop": room_shop,
     "Alley": room_alley,
