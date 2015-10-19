@@ -5,7 +5,7 @@ item_pen = 	{"id" : "pen" ,
 			"damage_player": 5
 			}
 
-item_plastic_knife = 	{"id" : "plastic knife" , 
+item_knife = 	{"id" : "knife" , 
 						"name" : "a plastic knife", 
 						"description": "A leftover plastic knife from a late night cheesy chip.",
 						"damage_beggar": 0, 
@@ -77,11 +77,10 @@ item_wand = 	{ "id" : "wand" ,
 
 item_bacon = 	{ "id" : "bacon" , 
 				"name" : "some bacon", 
-				"description": "Delicious bacon, 64'%'' pork, 100'%' amazing. I bet this smells delicious when being cooked.",
+				"description": "Delicious bacon, 64'%' pork, 100'%' amazing. I bet this smells delicious when being cooked.",
 				"damage_beggar": 0, 
 				"damage_player": 5
 				}
-print(item_bacon)
 
 item_laptop = 	{ "id" : "laptop" , 
 				"name" : "your laptop", 

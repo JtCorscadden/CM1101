@@ -3,7 +3,7 @@ from player import *
 from items import *
 from gameparser import *
 import string
-
+sense = True
 
 def list_of_items(items):
     """This function takes a list of items (see items.py for the definition) and
@@ -54,6 +54,7 @@ def print_inventory_items(items):
     You have id card, laptop, money.
     <BLANKLINE>
     """
+
     print ('You have',list_of_items(items) + '.')
     print ('')
 
@@ -100,12 +101,13 @@ def print_room(room):
     <BLANKLINE>
     Note: <BLANKLINE> here means that doctest should expect a blank line.
     """
-    print('')
-    print(room["name"].upper())
-    print('')
-    print(room["description"])
-    print('')
-    print_room_items(room)
+    if sense == True:
+        print('')
+        print(room["name"].upper())
+        print('')
+        print(room["description"])
+        print('')
+        print_room_items(room)
 
 def exit_leads_to(exits, direction):
     """This function takes a dictionary of exits and a direction (a particular
@@ -236,7 +238,7 @@ def execute_drop(item_id):
     print ('You cannot drop that.')
     
 
-def execute_command(command):
+def execute_command(command, tf):
     """This function takes a command (a list of words as returned by
     normalise_input) and, depending on the type of action (the first word of
     the command: "go", "take", or "drop"), executes either execute_go,
@@ -266,6 +268,8 @@ def execute_command(command):
 
     else:
         print("This makes no sense.")
+        return sense
+
 
 
 def menu(exits, room_items, inv_items):
@@ -296,20 +300,23 @@ def move(exits, direction):
 
 # This is the entry point of our program
 def main():
+    global sense
     print("You are nearly late for your first lecture and you realise that you have forgotten to bring a pen! To beat the game, find a pen for class!")
 
     while True:
+        roomfirst = current_room
         print_room(current_room)
         print_inventory_items(inventory)
         command = menu(current_room["exits"], current_room["items"], inventory)
         print (command)
         command = command.split()
-        execute_command(command)
-        checkinv(1.0)
+        execute_command(command, sense)
+        if roomfirst == current_room:
+            sense = False
+        else:
+            sense = True
 
-        if item_pen in inventory:
-            print ('YOU FINALLY GOT A PEN FOR UNIVERSITY.')
-            break
+
 
 # Are we being run as a script? If so, run main().
 # '__main__' is the name of the scope in which top-level code executes.

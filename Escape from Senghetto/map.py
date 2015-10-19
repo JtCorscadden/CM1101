@@ -1,4 +1,5 @@
-from items import *
+from finalItems import *
+
 room_bedroom = {
     "name": "Bedroom",
 
@@ -13,7 +14,7 @@ room_bedroom = {
 
     "exits": {"south": "Hall"},
 
-    "items": [item_example, item_example]
+    "items": [item_pen , item_belt]
 }
 
 room_kitchen = {
@@ -30,9 +31,8 @@ room_kitchen = {
 
     "exits": {"east": "Hall"},
 
-    "items": [item_example, item_example]
-}
-
+    "items": [item_knife, item_sponge, item_bacon, item_top]
+    }
 room_hall = {
     "name": "Hall",
 
@@ -47,7 +47,7 @@ room_hall = {
 
     "exits": {"north": "Bedroom", "east": "Bathroom", "south": "Exit", "west": "Kitchen" },
 
-    "items": [item_example, item_example]
+    "items": [item_bulb, item_pumpkin]
 }
 
 room_bathroom = {
@@ -62,7 +62,7 @@ room_bathroom = {
 
     "exits": {"west": "Hall"},
 
-    "items": [item_example, item_example]
+    "items": [item_toilet_roll, item_boxers]
 }
 
 room_exit = {
@@ -77,9 +77,9 @@ room_exit = {
 
     "exits": {"north": "Hall", "east": "Outside"},
 
-    "items": [item_example, item_example]
-}
-
+    "items": [item_trousers]
+    }
+    
 room_outside = {
     "name": "Outside",
 
@@ -93,9 +93,8 @@ room_outside = {
 
     "exits": {"west": "Exit", "east": "Shop", "south": "Alley"},
 
-    "items": [item_example, item_example]
+    "items": [item_stone]
 }
-
 room_shop = {
     "name": "Shop",
 
@@ -108,9 +107,8 @@ room_shop = {
 
     "exits": {"west": "Outside"},
 
-    "items": [item_example, item_example]
+    "items": []
 }
-
 room_alley = {
     "name": "Alley",
 
@@ -123,9 +121,20 @@ room_alley = {
 
     "exits": {"north": "Outside", "south": "Bus Stop"},
 
-    "items": [item_example, item_example]
+    "items": []
 }
+room_alley_after = {
+    "name": "Alley",
 
+    "description":
+    """
+    
+    """,
+
+    "exits": {"north": "Outside", "south": "Bus Stop"},
+
+    "items": [item_shoes]
+}
 room_bus = {
     "name": "Bus Stop",
 
@@ -138,9 +147,8 @@ room_bus = {
 
     "exits": {"north": "Alley"},
 
-    "items": [item_example, item_example]
+    "items": []
 }
-
 rooms = {
     "Bedroom": room_bedroom,
     "Kitchen": room_kitchen,
