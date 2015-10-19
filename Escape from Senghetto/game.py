@@ -1,9 +1,27 @@
 from map import rooms
 from player import *
-from items import *
+from finalItems import *
 from gameparser import *
 import string
 sense = True
+
+#changes: inventory 6, clothes inventory, check self
+""" To do: 
+1) Locks
+2) Shop
+3) Alley Boss
+4) Endings
+5) Bacon trick
+6) sell laptop
+"""
+def check_self(thing):
+    global wearing
+    if wearing != []:
+        print ('You are wearing:')
+        for item in wearing:
+            print (item['id'])
+    else:
+        print ('You are naked, other than that everthing seems normal.')
 
 def list_of_items(items):
     """This function takes a list of items (see items.py for the definition) and
@@ -54,9 +72,12 @@ def print_inventory_items(items):
     You have id card, laptop, money.
     <BLANKLINE>
     """
-
-    print ('You have',list_of_items(items) + '.')
-    print ('')
+    if list_of_items(items) != (""):
+        print ('You have',list_of_items(items) + '.')
+        print ('')
+    else:
+        print ('You have no items')
+        
 
 
 def print_room(room):
@@ -170,7 +191,9 @@ def print_menu(exits, room_items, inv_items):
         print ('TAKE',item['id'].upper(),'to take',item['name'].upper())
     for item in inv_items:
         print ('DROP', item['id'].upper(),'to drop',item['name'].upper())
+    print ('CHECK SELF to check what you are wearing')
     print('What do you want to do?')
+    print ()
 
 
 def is_valid_exit(exits, chosen_exit):
@@ -215,10 +238,21 @@ def execute_take(item_id):
     global current_room
     for item in current_room['items']:
         if item_id == item['id']:
-            inventory.append(item)
-            current_room['items'].remove(item)
-            print(item['description'])
-            return
+            global clothes
+            for garment in clothes:
+                if item_id == garment['id']:
+                    wearing.append(garment)
+                    current_room['items'].remove(garment)
+                    print(garment['description'])
+                    return
+            if len(inventory) < 6:
+                inventory.append(item)
+                current_room['items'].remove(item)
+                print(item['description'])
+                return
+            else:
+                print ('You can only carry 6 items!')
+                return
     print ('You cannot take that')
     
 
@@ -237,8 +271,17 @@ def execute_drop(item_id):
         
     print ('You cannot drop that.')
     
+def check_if_clothes(item_id):
+    global clothes
+    for garment in clothes:
+        if item_id == garment['id']:
+            wearing.append(garment)
+            current_room['items'].remove(garment)
+            print(garment['description'])
+            return true
+    
 
-def execute_command(command, tf):
+def execute_command(command):
     """This function takes a command (a list of words as returned by
     normalise_input) and, depending on the type of action (the first word of
     the command: "go", "take", or "drop"), executes either execute_go,
@@ -265,11 +308,13 @@ def execute_command(command, tf):
             execute_drop(command[1])
         else:
             print("Drop what?")
+            
+    elif command[0] == 'check':
+        if command[1] == 'self':
+            check_self(wearing)
 
     else:
         print("This makes no sense.")
-        return sense
-
 
 
 def menu(exits, room_items, inv_items):
@@ -300,17 +345,15 @@ def move(exits, direction):
 
 # This is the entry point of our program
 def main():
+    
     global sense
-    print("You are nearly late for your first lecture and you realise that you have forgotten to bring a pen! To beat the game, find a pen for class!")
-
     while True:
         roomfirst = current_room
         print_room(current_room)
         print_inventory_items(inventory)
         command = menu(current_room["exits"], current_room["items"], inventory)
-        print (command)
         command = command.split()
-        execute_command(command, sense)
+        execute_command(command)
         if roomfirst == current_room:
             sense = False
         else:

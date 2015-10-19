@@ -1,120 +1,77 @@
-item_pen =  {"id" : "pen" ,
-            "name": "a pen",
-            "description": "A small green ballpoint pen. Who buys green pens?",
-            "damage_beggar": 20, 
-            "damage_player": 5
-            }
+item_id = {
+    "id": "id",
 
-item_plastic_knife =    {"id" : "plastic knife" , 
-                        "name" : "a plastic knife", 
-                        "description": "A leftover plastic knife from a late night cheesy chip.",
-                        "damage_beggar": 0, 
-                        "damage_player": 10
-                        }
+    "name": "id card",
 
-item_toilet_roll =  {"id" : "toilet roll" , 
-                    "name" : "some toilet roll", 
-                    "description": "Some toilet roll. Tesco own brand. It's like sandpaper.",
-                    "damage_beggar": 0, 
-                    "damage_player": 10
-                    }
+    "description":
+    """You new shiny student ID card. Expires 1 June 2017.
+You wonder why they have printed a suicide hotline number on it?... it weighs 0.1kg.""",
 
-item_frying_pan =   {"id" : "frying pan", 
-                    "name" : "a frying pan", 
-                    "description": "A non-stick frying pan with bits of burnt bacon sticking to it.",
-                    "damage_beggar": 40, 
-                    "damage_player": 5
-                    }
+    "weight": 0.1
+}
 
-item_bulb =     {"id" : "bulb" , 
-                "name" : "a bulb", 
-                "description": "It is a bright idea to carry a bulb with you at all times... Bright idea? C'mon guys, tough crowd?",
-                "damage_beggar": 30, 
-                "damage_player": 30
-                }
+item_example = {
+    "id": "example",
 
-item_sponge =   { "id" : "sponge" , 
-                "name" : "a sponge", 
-                "description": "A sponge. Very absorbant. Doesn't look like it has been used much.",
-                "damage_beggar": 0, 
-                "damage_player": 5
-                }
+    "name": "id card",
 
-item_belt =     { "id" : "belt" , 
-                "name" : "a belt", 
-                "description": "Standard belt for holding up a pair of trousers. Can also fit around ones head as a hilarious joke when drunk.",
-                "damage_beggar": 5, 
-                "damage_player": 5
-                }
+    "description":
+    """You new shiny student ID card. Expires 1 June 2017.
+You wonder why they have printed a suicide hotline number on it?... it weighs 0.1kg.""",
 
-item_stone =    { "id" : "stone" , 
-                "name" : "a stone", 
-                "description": "Wow man, that's totally a stone dude.",
-                "damage_beggar": 30, 
-                "damage_player": 5
-                }
+    "weight": 0.1
+}
 
-item_pumpkin =  { "id" : "pumpkin" , 
-                "name" : "a pumpkin",
-                "description": "A pumpkin, there seems to be some sort of phallic symbol carved into the side.", 
-                "damage_beggar": 5, 
-                "damage_player": 5
-                }
+item_laptop = {
+    "id": "laptop",
 
-item_phone =    { "id" : "phone" , 
-                "name" : "your cell phone", 
-                "description": "Your trusty mobile phone. You never go anywhere without it. It's dead, as usual.",
-                "damage_beggar": 10, 
-                "damage_player": 5
-                }
+    "name": "laptop",
 
-item_wand =     { "id" : "wand" , 
-                "name" : "a wand", 
-                "description": "A magic wand, who knows what mysterious items and spells you can conjour with this. Wizard hat sold seperately.",
-                "damage_beggar": 80, 
-                "damage_player": 5
-                }
+    "description":
+    "It has seen better days. At least it has a WiFi card! It weighs 1.0kg.",
 
-item_bacon =    { "id" : "bacon" , 
-                "name" : "some bacon", 
-                "description": "Delicious bacon, 64'%' pork, 100'%' amazing. I bet this smells delicious when being cooked.",
-                "damage_beggar": 0, 
-                "damage_player": 5
-                }
+    "weight": 1
+}
 
+item_money = {
+    "id": "money",
 
-item_laptop =   { "id" : "laptop" , 
-                "name" : "your laptop", 
-                "description": "Your laptop is... well it has Microsoft Word and Netflix, and that's good enough for you.",
-                "damage_beggar": 50, 
-                "damage_player": 10
-                }
+    "name": "money",
 
-item_shoes =    { "id" : "shoes" , 
-                "name" : "beggar's shoes", 
-                "description": "Apart from the scent of urine, these shoes are quite comfy.",
-                "damage_beggar": 0, 
-                "damage_player": 0
-                }
+    "description":
+    "This wad of cash is barely enough to pay your tuition fees. It weighs 1.0kg.",
 
-item_boxers =   { "id" : "boxers" , 
-                "name" : "your boxers", 
-                "description": "Calvin Klein boxers. Who are you kidding, you imported them from China for £2.50 a pair.",
-                "damage_beggar": 0, 
-                "damage_player": 0
-                }
+    "weight": 1
+}
 
-item_top =      { "id" : "top" , 
-                "name" : "your t-shirt", 
-                "description": "Primarks finest. I hope those yellow stains aren't what they smell like...",
-                "damage_beggar": 0, 
-                "damage_player": 0
-                }
+item_biscuits = {
+    "id": "biscuits",
 
-item_trousers = { "id" : "trousers" , 
-                "name" : "your trousers", 
-                "description": "The great thing about jeans is you can wear them even when you rip them. ",
-                "damage_beggar": 0, 
-                "damage_player": 0
-                }
+    "name": "a pack of biscuits",
 
+    "description": "A pack of biscuits for Kirill. He buys a lot of biscuits... it weighs 1.5kg.",
+
+    "weight": 1.5
+}
+
+item_pen = {
+    "id": "pen",
+    
+    "name": "a pen",
+
+    "description": "A basic ballpoint pen. It weighs 0.1kg.",
+
+    "weight": 0.1
+}
+
+item_handbook = {
+    "id": "handbook",
+    
+    "name": "a student handbook",
+
+    "description": "This student handbook explains everything. Seriously. It weighs 0.3kg.",
+
+    "weight": 0.3
+}
+
+item_all = [item_handbook, item_pen, item_biscuits, item_money, item_laptop, item_id]

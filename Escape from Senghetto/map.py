@@ -31,7 +31,7 @@ room_kitchen = {
 
     "exits": {"east": "Hall"},
 
-    "items": [item_knife, item_sponge, item_bacon, item_top]
+    "items": [item_plastic_knife, item_sponge, item_bacon, item_top]
     }
 room_hall = {
     "name": "Hall",

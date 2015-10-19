@@ -5,21 +5,21 @@ item_pen = 	{"id" : "pen" ,
 			"damage_player": 5
 			}
 
-item_knife = 	{"id" : "knife" , 
+item_plastic_knife = 	{"id" : "knife" , 
 						"name" : "a plastic knife", 
 						"description": "A leftover plastic knife from a late night cheesy chip.",
 						"damage_beggar": 0, 
 						"damage_player": 10
 						}
 
-item_toilet_roll = 	{"id" : "toilet roll" , 
+item_toilet_roll = 	{"id" : "roll" , 
 					"name" : "some toilet roll", 
 					"description": "Some toilet roll. Tesco own brand. It's like sandpaper.",
 					"damage_beggar": 0, 
 					"damage_player": 10
 					}
 
-item_frying_pan = 	{"id" : "frying pan", 
+item_frying_pan = 	{"id" : "pan", 
 					"name" : "a frying pan", 
 					"description": "A non-stick frying pan with bits of burnt bacon sticking to it.",
 					"damage_beggar": 40, 
@@ -77,7 +77,7 @@ item_wand = 	{ "id" : "wand" ,
 
 item_bacon = 	{ "id" : "bacon" , 
 				"name" : "some bacon", 
-				"description": "Delicious bacon, 64'%' pork, 100'%' amazing. I bet this smells delicious when being cooked.",
+				"description": "Delicious bacon, 64'%'' pork, 100'%' amazing. I bet this smells delicious when being cooked.",
 				"damage_beggar": 0, 
 				"damage_player": 5
 				}
@@ -116,4 +116,6 @@ item_trousers = { "id" : "trousers" ,
 				"damage_beggar": 0, 
 				"damage_player": 0
 				}
+    
+clothes = [item_shoes, item_boxers, item_top, item_trousers]
 
