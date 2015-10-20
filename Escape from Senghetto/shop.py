@@ -1,0 +1,1 @@
+wares = {"Water": True , "Wand": True}

@@ -133,7 +133,7 @@ room_alley_after = {
 
     "exits": {"north": "Outside", "south": "Bus Stop"},
 
-    "items": [item_shoes]
+    "items": [item_shoes , item_beggar]
 }
 room_bus = {
     "name": "Bus Stop",

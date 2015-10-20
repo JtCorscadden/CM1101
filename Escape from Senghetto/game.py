@@ -2,8 +2,12 @@ from map import rooms
 from player import *
 from finalItems import *
 from gameparser import *
+from beggar import *
+from shop import *
+from Descriptions import *
 import string
 sense = True
+game_loop = True
 
 #changes: inventory 6, clothes inventory, check self
 """ To do: 
@@ -341,13 +345,56 @@ def move(exits, direction):
     False
     """
     return rooms[exits[direction]]
-
+    
+def win_lose():
+    
+    if current_room == rooms["Bus Stop"]:
+        while True:
+            user_input = input("Do you want to board the bus? ")
+            board_bus = normalise_input(user_input)
+            if board_bus == "yes":
+                if money < 1.80:
+                    print(descriptions["insufficient funds"])
+                    return
+                else:
+                    if constitution["Alive"] == False: #Player killed the beggar
+                        if wares["Wand"] == False: #Player bought the wand
+                            if rooms["Alley"]["items"] != item_beggar: #Player hid the beggar's dead body
+                                print (descriptions["hogwarts end credits"])
+                                game_loop = False
+                                return
+                            else: #Player did NOT hide the beggar's body
+                                print(descriptions["hogwarts alt credits"])
+                                game_loop = False
+                                return
+                        else: #Player did NOT buy the wand
+                            if rooms["Alley"]["items"] != item_beggar: #Player hid the beggar's dead body
+                                print(descriptions["common credits"])
+                                game_loop = False
+                                return
+                            else: #Player did NOT hide the beggar's body
+                                print(descriptions["murder charge credits"])
+                                game_loop = False
+                                return
+                    else: #Player did NOT kill the beggar
+                        if wares["Wand"] == False: #Player bought the wand
+                            print (descriptions["hogwarts end credits"])
+                            game_loop = False
+                            return
+                        else:
+                            print(descriptions["common credits"]) #Player didn't buy the wand
+                            game_loop = False
+                            return
+            else:
+                pass
+                
 
 # This is the entry point of our program
 def main():
     
     global sense
-    while True:
+    global game_loop
+    while game_loop = True:
         roomfirst = current_room
         print_room(current_room)
         print_inventory_items(inventory)
@@ -358,8 +405,6 @@ def main():
             sense = False
         else:
             sense = True
-
-
 
 # Are we being run as a script? If so, run main().
 # '__main__' is the name of the scope in which top-level code executes.

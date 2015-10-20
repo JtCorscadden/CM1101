@@ -116,6 +116,11 @@ item_trousers = { "id" : "trousers" ,
 				"damage_beggar": 0, 
 				"damage_player": 0
 				}
+
+item_beggar = { "id" : "beggar" , 
+				"name" : "beggar's dead body", 
+				"description": "Whoops.",
+				}
     
 clothes = [item_shoes, item_boxers, item_top, item_trousers]
 
